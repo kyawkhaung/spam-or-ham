@@ -1,0 +1,87 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Classification</title>
+        
+        
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+        
+       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    </head>
+    
+    <body>
+    
+    <div class="container-fluid">
+    <div class="container">
+    <div class="row">
+    <br>
+      <h2 class="text-center">Spam or Not Spam Message Classification</h2>
+      <br>
+      <div class="col-md-6">
+      
+     <div class="panel panel-primary">
+  <div class="panel-heading font-weight-bold">Play Ground for Message</div>
+  <div class="panel-body">
+      <form class="form-horizontal" action="{{ url_for('predictSpam')}}" method="post">
+  
+        
+        
+        <div class="form-group">
+         <div class="row">
+         
+          <div class="col-md-offset-1 col-md-10">                    
+            <textarea class="form-control" type="text" id="txtmessage" name="txtmessage" row=3></textarea>
+          </div>
+           </div>
+        </div>
+       
+    
+        <div class="form-group">        
+          <div class="col-sm-offset-1">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </form>
+    
+         <br><h4>{{ prediction_text }}<h4>
+         <div id="output"></div>
+         </div>
+         </div>
+</div>
+      
+         <div class="col-md-6">
+         <div class="panel panel-primary">
+           <div class="panel-heading">Explanation</div>
+  <div class="panel-body">
+  <h4>Key Project Highlights</h4>
+         <ul>
+         <li>Logistic Regression, Navie Bayes, Random Forest, and XG Boost are used for model training. XG Boost is the best performing in terms of F1 Score. XG Boost is run for parameter tuning and calibrated with best parameters for final model building. As obvious, XG Boost is used for this web application deployment. </li>
+         <li>Feature engineering is performed and generated word count, verb count, noun count and number counts.</li>
+         <li>Stacking method is used for X data input, which is merging with actual cleaned text and data points from feature engineering</li>
+         </ul>
+         <h4>Future Improvement</h4>
+         <ol>
+         <li>Dataset is imbalanced and need to treat with SMOTE or other sampling method.</li>
+         <li>Try a few variations of data input: e.g. stand-alone cleaned text</li>
+         <li>Use Kfold or other cross validation to make model generalized learning.</li>
+         </ol>
+         
+         <p>
+         
+         </p>
+         </div>
+    </div>
+      </div>
+     </div>
+     
+    </body>
+    
+   
+    
+    </html>
