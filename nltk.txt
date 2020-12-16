@@ -1,3 +1,7 @@
+averaged_perceptron_tagger
+stopwords
+rslp
 wordnet
 punkt
-averaged_perceptron_tagger
+pros_cons
+vader_lexicon
