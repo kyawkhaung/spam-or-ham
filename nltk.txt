@@ -1,7 +1,1 @@
-averaged_perceptron_tagger
-stopwords
-rslp
-wordnet
-punkt
-pros_cons
-vader_lexicon
+all
